@@ -1,0 +1,68 @@
+<template name="logo">
+  <view class="logo">
+    <view class="d3box">
+      <view class="cube">
+        <view class="item front"></view>
+        <view class="item back"></view>
+        <view class="item left"></view>
+        <view class="item right"></view>
+        <view class="item top"></view>
+        <view class="item bottom"></view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--双色球-->
+<template name="ssq">
+  <view class="des"><text class="bold red">红球区</text>请选择6个红球</view>
+  <view class="row">
+    <view bindtap="selectRed" data-boll="{{redboll}}" class="boll {{redToggle[redboll] ? 'red' : ''}}" wx:for="{{ssq.red}}" wx:for-item="redboll" wx:key="*this">
+      <text>{{redboll}}</text>
+    </view>
+  </view>
+  <view class="des"><text class="bold blue">蓝球区</text>请选择1个蓝球</view>
+  <view class="row">
+    <view bindtap="selectBlue" data-boll="{{blueboll}}" class="boll {{blueToggle[blueboll] ? 'blue' : ''}}" wx:for="{{ssq.blue}}" wx:for-item="blueboll" wx:key="*this">
+      <text>{{blueboll}}</text>
+    </view>
+  </view>
+</template>
+
+<!--大乐透-->
+<template name="dlt">
+  <view class="des"><text class="bold red">红球区</text>请选择5个红球</view>
+  <view class="row">
+    <view bindtap="selectRed" data-boll="{{redboll}}" class="boll {{redToggle[redboll] ? 'red' : ''}}" wx:for="{{dlt.red}}" wx:for-item="redboll" wx:key="*this">
+      <text>{{redboll}}</text>
+    </view>
+  </view>
+  <view class="des"><text class="bold blue">蓝球区</text>请选择2个蓝球</view>
+  <view class="row">
+    <view bindtap="selectBlue" data-boll="{{blueboll}}" class="boll {{blueToggle[blueboll] ? 'blue' : ''}}" wx:for="{{dlt.blue}}" wx:for-item="blueboll" wx:key="*this">
+      <text>{{blueboll}}</text>
+    </view>
+  </view>
+</template>
+
+<!--福彩3D-->
+<template name="d3">
+  <view class="des"><text class="bold red">百位</text>请选择1个球</view>
+  <view class="row">
+    <view bindtap="selectD3" data-pos="h" data-boll="{{boll}}" class="boll {{d3Bolls.h !== '' && d3Bolls.h == idx ? 'red' : ''}}" wx:for="{{d3}}" wx:for-item="boll" wx:for-index="idx" wx:key="*this">
+      <text>{{boll}}</text>
+    </view>
+  </view>
+  <view class="des"><text class="bold red">十位</text>请选择1个球</view>
+  <view class="row">
+    <view bindtap="selectD3" data-pos="t" data-boll="{{boll}}" class="boll {{d3Bolls.t !== '' && d3Bolls.t == idx ? 'red' : ''}}" wx:for="{{d3}}" wx:for-item="boll" wx:for-index="idx" wx:key="*this">
+      <text>{{boll}}</text>
+    </view>
+  </view>
+  <view class="des"><text class="bold red">个位</text>请选择1个球</view>
+  <view class="row">
+    <view bindtap="selectD3" data-pos="d" data-boll="{{boll}}" class="boll {{d3Bolls.d !== '' && d3Bolls.d == idx ? 'red' : ''}}" wx:for="{{d3}}" wx:for-item="boll" wx:for-index="idx" wx:key="*this">
+      <text>{{boll}}</text>
+    </view>
+  </view>
+</template>

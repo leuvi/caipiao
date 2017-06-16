@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<import src="temp.wxml"/>
+
+<view class="home">
+  <view class="banner">
+    <view class="pic"><image src="http://www.sweetui.com/assets/caipiaobg.jpg" mode="widthFix"></image></view>
+    <view class="formula">
+      <view class="inner">
+        <template is="logo"></template>
+        <view class="pic">
+          <image src="http://www.sweetui.com/assets/caipiaologo.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tab">
+    <view bindtap="tab" data-id="{{idx}}" class="item {{cur == idx ? 'on' : ''}}" wx:for="{{sort}}" wx:for-item="name" wx:for-index="idx" wx:key="*this">
+      <text>{{name}}</text>
+    </view>
+  </view>
+  <view class="betbox">
+    <view class="bollarea">
+      <view class="panel ssq" wx:if="{{cur == 0}}">
+        <template is="ssq" data="{{redToggle, blueToggle, ssq}}"></template>
+      </view>
+      <view class="panel dlt" wx:elif="{{cur == 1}}">
+        <template is="dlt" data="{{redToggle, blueToggle, dlt}}"></template>
+      </view>
+      <view class="fc3d" wx:elif="{{cur == 2}}">
+        <template is="d3" data="{{d3, d3Bolls}}"></template>
+      </view>
+      <view class="pl3" wx:elif="{{cur == 3}}">
+        <template is="d3" data="{{d3, d3Bolls}}"></template>
+      </view>
+    </view>
+  </view>
+  <view class="selectbox">
+    <view class="title">已选：</view>
+    <view class="bolls">
+      <block wx:if="{{cur < 2}}">
+        <view class="item red" wx:for="{{red}}" wx:for-item="redboll" wx:key="*this">
+          <text>{{redboll}}</text>
+        </view>
+        <view class="item blue" wx:for="{{blue}}" wx:for-item="blueboll" wx:key="*this">
+          <text>{{blueboll}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="item red" hidden="{{d3Bolls.h === ''}}">
+          <text>{{d3Bolls.h}}</text>
+        </view>
+        <view class="item red" hidden="{{d3Bolls.t === ''}}">
+          <text>{{d3Bolls.t}}</text>
+        </view>
+        <view class="item red" hidden="{{d3Bolls.d === ''}}">
+          <text>{{d3Bolls.d}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="toDetail" hidden="{{!result.first}}" bindtap="toDetail">
+      <view class="sharebtn" hover-class="hovershare">分享给朋友</view>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="btnitem clear" hover-class="hoverclear" bindtap="clearAllBolls">清空选球</view>
+    <view class="btnitem random" hover-class="hoverrandom" bindtap="randomOne">随机一注</view>
+    <view class="btnitem compute" hover-class="hovercompute" bindtap="compute">{{isCompute ? percent + '%' : '计算概率'}}</view>
+  </view>
+  <view class="progressbar">
+    <progress percent="{{percent}}" stroke-width="10" activeColor="#ededed" backgroundColor="#fff" />
+  </view>
+  <view class="result">
+    <view class="bd">
+      <view class="item">
+        <view class="title">头奖概率</view>
+        <view class="content"><text class="percent">{{result.first}}</text></view>
+      </view>
+      <view class="item">
+        <view class="title">建议守号</view>
+        <view class="content">{{result.suggest}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="tips">购彩有风险仅供参考！</view>
+</view>
+
+

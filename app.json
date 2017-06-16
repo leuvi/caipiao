@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0a5649",
+    "navigationBarTitleText": "彩票概率预测",
+    "navigationBarTextStyle":"light"
+  }
+}

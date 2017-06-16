@@ -1,0 +1,72 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  background: #0a5649;
+  padding-bottom: 80rpx;
+}
+.card .name {
+  text-align: center;
+  line-height: 80rpx;
+  padding-top: 60rpx;
+  color: #fff;
+  font-size: 56rpx;
+}
+.card .bolls {
+  width: 80%;
+  margin: 50rpx auto 60rpx;
+  display: flex;
+  border-top: 1rpx solid rgba(255, 255, 255, .5);
+  border-bottom: 1rpx solid rgba(255, 255, 255, .5);
+  padding: 40rpx 0;
+}
+.card .bolls .item {
+  flex-grow: 1;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.card .bolls .red {
+  background: #fff;
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 64rpx;
+  color: #d70038;
+  border-radius: 50%;
+}
+.card .bolls .blue {
+  background: #fff;
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 64rpx;
+  color: #007ef4;
+  border-radius: 50%;
+}
+.result {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+.result .item {
+  flex-grow: 1;
+}
+.result .item .title {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, .6);
+}
+.result .item .content {
+  font-size: 64rpx;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 10rpx;
+}
+.btn {
+  padding: 40rpx 140rpx;
+}
+.btn .sharebtn {
+  color: #999;
+}

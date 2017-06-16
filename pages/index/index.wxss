@@ -1,0 +1,246 @@
+/**index.wxss**/
+@import 'logo.wxss';
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.banner {
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+  position: relative;
+}
+.pic {
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+.pic image {
+  width: 100%;
+}
+.formula {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300rpx;
+}
+.formula .inner {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 40rpx;
+  text-align: center;
+}
+.formula .inner image {
+  width: 60%;
+}
+.formula .inner .pic {
+  animation: fadeOut .5s 5s linear 1;
+  opacity: .5;
+}
+.tab {
+  margin-top: 10px;
+  background: #fff;
+  font-size: 28rpx;
+  display: flex;
+  border-bottom: 1rpx solid #0c8f79;
+}
+.tab .item {
+  background: #fff;
+  color: #0c8f79;
+  padding: 16rpx 30rpx;
+  
+}
+.tab .on {
+  background: #0c8f79;
+  color: #fff;
+}
+.betbox {
+  background: #fff;
+}
+.bollarea {
+  padding: 30rpx 0 10rpx 20rpx;
+}
+.pannel {
+  width: 100%;
+  font-size: 28rpx;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.line {
+  padding-top: 20rpx;
+  border-top: 1rpx solid #ededed;
+}
+.des {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+  height: 48rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+.des .bold {
+  font-weight: 700;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.des .red {
+  color: #ff0042;
+}
+.des .blue {
+  color: #007ef4;
+}
+.boll {
+  background: #fff;
+  font-size: 32rpx;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.boll.red {
+  background: #ff0042;
+  border: 1rpx solid #ff0042;
+  color: #fff;
+}
+.boll.blue {
+  background: #007ef4;
+  border: 1rpx solid #007ef4;
+  color: #fff;
+}
+.selectbox {
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  padding: 20rpx 0 20rpx 20rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+.selectbox .title {
+  flex-basis: 100rpx;
+  flex-grow: 0;
+}
+.selectbox .toDetail {
+  flex-basis: 200rpx;
+  flex-grow: 0;
+}
+.selectbox .sharebtn {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  border: 1rpx solid #ccc;
+  background: #fdfdfd;
+  color: #666;
+  border-radius: 5px;
+  font-size: 26rpx;
+  line-height: 56rpx;
+  box-sizing: border-box;
+}
+.selectbox .hovershare {
+  border: 1rpx solid #aaa;
+  background: #ededed;
+  color: #333;
+}
+.selectbox .bolls {
+  display: flex;
+}
+.selectbox .bolls .item {
+  margin-right: 12rpx;
+  font-weight: 700;
+}
+.selectbox .bolls .red {
+  color: #ff0042;
+}
+.selectbox .bolls .blue {
+  color: #007ef4;
+}
+.btn {
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  padding: 20rpx;
+}
+.btn .btnitem {
+  font-size: 28rpx;
+  width: 32%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 3%;
+  box-sizing: border-box;
+  color: #fff;
+}
+.btn .clear {
+  border: 1rpx solid #ccc;
+  background: #fdfdfd;
+  color: #666;
+}
+.btn .hoverclear {
+  border: 1rpx solid #aaa;
+  background: #ededed;
+  color: #333;
+}
+.btn .random {
+  background: #ff0042;
+}
+.btn .hoverrandom {
+  background: #d70038;
+}
+.btn .compute {
+  background: #0c8f79;
+  margin-right: 0;
+}
+.btn .hovercompute {
+  background: #007662;
+}
+.progressbar {
+  height: 10px;
+  overflow: hidden;
+}
+.result {
+  background: #fff;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.result .bd {
+  display: flex;
+  height: 160rpx;
+}
+.result .item {
+  width: 50%;
+}
+.result .item .title {
+  text-align: center;
+  height: 48rpx;
+  font-size: 28rpx;
+  margin: 0 100rpx;
+  color: #0c8f79;
+  border-bottom: 2px solid #0c8f79;
+}
+.result .item .content {
+  text-align: center;
+  font-size: 56rpx;
+  min-height: 70rpx;
+  font-weight: 600;
+  padding-top: 30rpx;
+  color: #ff0042;
+}
+.result .item:first-child .content {
+  border-right: 1rpx solid #ededed;
+}
+.tips {
+  border-top: 1rpx solid #ededed;
+  text-align: center;
+  color: #ccc;
+  padding: 20rpx;
+  font-size: 26rpx;
+  background: #fff;
+}

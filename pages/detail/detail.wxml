@@ -1,0 +1,28 @@
+<view class="detail">
+  <view class="card">
+    <view class="name">{{_type}}</view>
+    <view class="bolls">
+      <view class="item" wx:for="{{red}}" wx:for-item="redboll" wx:key="*this">
+        <view class="red">{{redboll}}</view>
+      </view>
+      <block wx:if="{{blue.length > 0}}">
+        <view class="item" wx:for="{{blue}}" wx:for-item="blueboll" wx:key="*this">
+          <view class="blue">{{blueboll}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="result">
+      <view class="item">
+        <view class="title">头奖概率</view>
+        <view class="content">{{first}}</view>
+      </view>
+      <view class="item">
+        <view class="title">建议守号</view>
+        <view class="content">{{suggest}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button class="sharebtn" open-type="share">分享给朋友~</button>
+  </view>
+</view>

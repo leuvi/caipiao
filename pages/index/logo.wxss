@@ -1,0 +1,54 @@
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+}
+.d3box {
+  width: 160rpx;
+  height: 160rpx;
+  perspective: 400rpx;
+  display: inline-block;
+  position: relative;
+}
+.d3box .cube {
+  width: 120rpx;
+  height: 120rpx;
+  padding-top: 60rpx;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  background-color: none;
+  animation: ry 5s linear infinite;
+}
+@keyframes ry {
+  0% {
+    transform: rotateX(120deg) rotateY(0);
+  }
+  100% {
+    transform: rotateX(120deg) rotateY(360deg);
+  }
+}
+.d3box .item {
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+}
+.d3box .front {
+  transform: rotateY(0deg) translateZ(20rpx);
+}
+.d3box .back {
+  transform: rotateY(180deg) translateZ(20rpx);
+}
+.d3box .left {
+  transform: rotateY(-90deg) translateZ(20rpx);
+}
+.d3box .right {
+  transform: rotateY(90deg) translateZ(20rpx);
+}
+.d3box .top {
+  transform: rotateX(90deg) translateZ(20rpx);
+}
+.d3box .bottom {
+  transform: rotateX(-90deg) translateZ(20rpx);
+}
