@@ -1,5 +1,6 @@
 //index.js
 var DATA = require('../../utils/data.js')
+var util = require('../../utils/util.js')
 
 var app = getApp()
 Page({
@@ -20,14 +21,14 @@ Page({
     },
     result: {},
     ssq: {
-      red: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33'],
-      blue: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16']
+      red: util.createBolls(33, 1),
+      blue: util.createBolls(16, 1),
     },
     dlt: {
-      red: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'],
-      blue: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+      red: util.createBolls(35, 1),
+      blue: util.createBolls(12, 1),
     },
-    d3: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    d3: util.createBolls(10),
   },
   onLoad: function () {
     var that = this
@@ -36,11 +37,11 @@ Page({
   tab(e) {
     const cur = e.currentTarget.dataset.id
     this.clearAllBolls()
-    this.setData({cur})
+    this.setData({ cur })
   },
   selectRed(e) {
     const boll = e.currentTarget.dataset.boll
-    if(this.data.red.some(v => v == boll)) {
+    if (this.data.red.some(v => v == boll)) {
       const toggle = this.data.redToggle
       toggle[boll] = false
       this.setData({
@@ -146,7 +147,7 @@ Page({
     })
   },
   shuffle(arr, pos) {
-    for(let i = arr.length - 1; i >= 0; i--) {
+    for (let i = arr.length - 1; i >= 0; i--) {
       const randomIndex = Math.floor(Math.random() * (i + 1))
       const itemAtIndex = arr[randomIndex]
       arr[randomIndex] = arr[i]
@@ -241,7 +242,7 @@ Page({
     this.setData({
       isCompute: true
     })
-    if(this.data.cur < 2) {
+    if (this.data.cur < 2) {
       arr.forEach(v => {
         if (this.checkSame(v.red, this.data.red, redlength)) {
           red.push(v.expect)
@@ -272,7 +273,7 @@ Page({
       }
       cache[bolls.h + bolls.t + bolls.d] = result
     }
-    
+
 
     this.setProgress(function () {
       self.setData({
@@ -304,7 +305,7 @@ Page({
   },
   getCache() {
     let name = ''
-    if(this.data.cur < 2) {
+    if (this.data.cur < 2) {
       name = this.data.red.concat(this.data.blue).join('')
     } else {
       name = this.data.d3Bolls.h + this.data.d3Bolls.t + this.data.d3Bolls.d
@@ -340,7 +341,7 @@ Page({
   },
   checkSame(arr1, arr2, num) {
     const newarr = []
-    if(Array.isArray(arr2)) {
+    if (Array.isArray(arr2)) {
       arr1.forEach(v1 => {
         arr2.forEach(v2 => {
           if (v1 === v2) {
